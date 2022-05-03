@@ -23,6 +23,15 @@ app.get('/explorersInNode', (req, res) => {
     const explorer = {name: "Explorer", msg: "Hello"}
     res.send(explorer)
 })
+// Query Params: Recibir parámetros por la url  (recibe el valor del obj a travez de la url)
+// http://localhost:300/explorers/gris
+// re.params = {"explorerName":"gris"}
+app.get('/explorers/:explorersName', (req, res) =>{
+    res.send(req.params)
+})
+
+
+
 
 // Con esto inicializamos esta app
 app.listen(port, () =>{
